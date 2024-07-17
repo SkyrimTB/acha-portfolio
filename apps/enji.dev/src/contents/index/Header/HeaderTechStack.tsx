@@ -28,7 +28,7 @@ function HeaderTechStack() {
         animate={animation.show}
         transition={{ delay: 0.6 }}
       >
-        current favorite tech stack/tools:
+        {/* current favorite tech stack/tools: */}
       </m.p>
       <m.ul
         className={clsx(
@@ -39,7 +39,7 @@ function HeaderTechStack() {
         animate="show"
         transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
       >
-        <m.li variants={animation}>
+        {/* <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
             <TypeScriptIcon className={clsx('h-6 w-6')} />
           </div>
@@ -67,8 +67,8 @@ function HeaderTechStack() {
           >
             <NextJsIcon className={clsx('h-6 w-6')} />
           </div>
-        </m.li>
-        <m.li variants={animation}>
+        </m.li> */}
+        {/* <m.li variants={animation}>
           <div className={clsx('h-3 w-[1px] bg-slate-300 dark:bg-slate-700')} />
         </m.li>
         <m.li variants={animation}>
@@ -80,7 +80,7 @@ function HeaderTechStack() {
           <div className={clsx('transition duration-200 hover:text-[#F24E1E]')}>
             <FigmaIcon className={clsx('h-6 w-6')} />
           </div>
-        </m.li>
+        </m.li> */}
       </m.ul>
     </div>
   );

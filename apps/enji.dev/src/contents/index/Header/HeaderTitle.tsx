@@ -70,9 +70,9 @@ function HeaderTitle() {
         >
           I&apos;m{' '}
           <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
-            Enji
+            Zehao
           </strong>{' '}
-          Kusnadi,{' '}
+          Zhang,{' '}
         </m.span>
         <m.h1
           className={clsx(
@@ -84,17 +84,52 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <span className={clsx('lowercase')}>A</span>{' '}
+          <span className={clsx('lowercase')}>AKA</span>{' '}
+          <strong
+            className={clsx('font-bold  text-slate-700', 'dark:text-slate-300')}
+          >
+            acha
+          </strong>{' '}
+          , typical{' '}
           <strong
             className={clsx(
-              'font-bold lowercase text-slate-700',
+              'font-underscore  text-slate-700',
               'dark:text-slate-300'
             )}
           >
-            Front-End Developer
-          </strong>{' '}
-          who loves intuitive,{' '}
-          <span className={clsx('block')}>clean and modern UI design.</span>
+            ENTP
+          </strong>
+          , who loves{' '}
+          <strong
+            className={clsx(
+              'font-underscore  text-slate-700',
+              'dark:text-slate-300'
+            )}
+          >
+            Game
+          </strong>
+          ,{' '}
+          <strong
+            className={clsx(
+              'font-underscore  text-slate-700',
+              'dark:text-slate-300'
+            )}
+          >
+            Technology{' '}
+          </strong>
+          ,
+          <span className={clsx('block')}>
+            {' '}
+            <strong
+              className={clsx(
+                'font-underscore  text-slate-700',
+                'dark:text-slate-300'
+              )}
+            >
+              Entertainment
+            </strong>{' '}
+            and any intuitive, clean and modern design.
+          </span>
         </m.h1>
       </span>
     </div>

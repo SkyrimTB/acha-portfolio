@@ -130,7 +130,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
               >
                 Share this on
               </div>
-              <Menu.Item>
+              {/* <Menu.Item>
                 {({ active }) => (
                   <ShareItemLink
                     active={active}
@@ -144,7 +144,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                     </span>
                   </ShareItemLink>
                 )}
-              </Menu.Item>
+              </Menu.Item> */}
               <div
                 className={clsx(
                   'border-divider-light my-2 border-t',

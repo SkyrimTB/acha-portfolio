@@ -24,8 +24,23 @@ function FeaturedCardSection() {
               <SparklesIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Clean & Intuitive"
-          desc="Keep the UI clean with a modern touch without compromising UX."
+          title="Design & Production"
+          desc="Creative and active carfting with collaborative and inclusive attitude. "
+        />
+
+        <FeaturedCard
+          icon={
+            <div
+              className={clsx(
+                'rounded-full bg-sky-300 p-3.5',
+                'dark:bg-sky-900'
+              )}
+            >
+              <CodeIcon className={clsx('h-5 w-5 text-white')} />
+            </div>
+          }
+          title="Programming & Coding"
+          desc="Writing clean code is my top priority while keeping it as optimized as possible."
         />
         <FeaturedCard
           icon={
@@ -38,22 +53,8 @@ function FeaturedCardSection() {
               <HeartIcon className={clsx('h-5 w-5 text-white')} />
             </div>
           }
-          title="Detail Oriented"
-          desc="Awareness to ease of access, UI consistency, and improved UX."
-        />
-        <FeaturedCard
-          icon={
-            <div
-              className={clsx(
-                'rounded-full bg-sky-300 p-3.5',
-                'dark:bg-sky-900'
-              )}
-            >
-              <CodeIcon className={clsx('h-5 w-5 text-white')} />
-            </div>
-          }
-          title="Pretty & Optimized"
-          desc="Writing clean code is a top priority while keeping it as optimized as possible."
+          title="Dream & Passion"
+          desc="Bring something AWESOME to the public and let them know me."
         />
       </div>
     </div>
@@ -77,7 +78,7 @@ function IndexContents() {
       <div className={clsx('hidden', 'lg:-mt-16 lg:mb-24 lg:block')}>
         <FeaturedCardSection />
       </div>
-      <div className={clsx('-mt-12 mb-12', 'md:mt-0 md:mb-24')}>
+      {/* <div className={clsx('-mt-12 mb-12', 'md:mt-0 md:mb-24')}>
         <QuoteSection />
       </div>
       <section className={clsx('mb-12', 'lg:mb-24')}>
@@ -88,7 +89,7 @@ function IndexContents() {
       </section>
       <section className={clsx('mb-12', 'lg:mb-24')}>
         <PrettyOptimized />
-      </section>
+      </section> */}
     </>
   );
 }

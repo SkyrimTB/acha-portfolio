@@ -47,15 +47,15 @@ function Navbar() {
           <nav className={clsx('flex', 'md:gap-2')} data-accent="violet">
             <NavLogo href="/" title="Home" />
             <ul className={clsx('flex items-center', 'md:gap-1')}>
-              <li>
+              {/* <li>
                 <NavLink title="Projects" href="/projects" />
-              </li>
+              </li> */}
               <li>
                 <NavLink title="Blog" href="/blog" />
               </li>
-              <li>
+              {/* <li>
                 <NavLink title="T.I.L" href="/today-i-learned" />
-              </li>
+              </li> */}
               <li className={clsx('lg:hidden')} data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>
@@ -65,16 +65,16 @@ function Navbar() {
             </ul>
           </nav>
           <ul className={clsx('flex items-center')}>
-            <li className={clsx('hidden', 'sm:block')}>
+            {/* <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
                 href="https://twitter.com/enjidev"
                 icon={<TwitterIcon className={clsx('h-5 w-5')} />}
                 title="Twitter"
               />
-            </li>
+            </li> */}
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
-                href="https://github.com/enjidev"
+                href="https://github.com/skyrimtb"
                 icon={<GitHubIcon className={clsx('h-5 w-5')} />}
                 title="GitHub"
               />
