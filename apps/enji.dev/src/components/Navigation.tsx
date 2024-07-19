@@ -13,7 +13,7 @@ import useOnScroll from '@/hooks/useOnScroll';
 const workLinks = [
   { title: 'Skills & Tools', href: '/work/skills-and-tools' },
   { title: 'Experience', href: '/work/experience' },
-  { title: 'Studio', href: '/work/studio' },
+  // { title: 'Studio', href: '/work/studio' },
   { title: 'Contact', href: '/work/contact' },
 ];
 

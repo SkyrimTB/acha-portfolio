@@ -1,0 +1,89 @@
+---
+title: C++ Coin Collector Game 🕹️
+description: The Coin Collector game is a C++ game where players navigate levels, collect coins, avoid fires and get high scores.
+date: '2024-03-07'
+lang: en
+tags:
+  - C++ Project
+  - Template
+  - Game
+category: tech
+---
+
+See the complete source code of [Coin Collector](https://github.com/SkyrimTB/CoinCollector)
+
+---
+
+## Features
+
+- **Three** levels of increasing difficulty and size
+- Player movement using **W, A, S, D** keys
+- Randomly generated coins to **collect**
+- Randomly generated fires to **avoid**
+- Healing items that appear **every 5 rounds**
+- Step **counter** to keep track of player's moves
+- **Game over** when player's HP reaches zero
+- Option to **restart** the game after game over
+- **Colorful ASCII** art for game elements
+
+---
+
+## C++ Features Used
+
+The Coin Collector game project utilizes several modern C++ features, including:
+
+1. **Move Semantics**: Efficiently transfers ownership of resources using move constructors and assignment operators in the `GameRunner` class.
+
+2. **RAII**: RAII stands for **Resource Acquisition Is Initialization**, it manages resources by ensuring proper initialization and cleanup in the `GameRunner` class.
+
+3. **Templates**: Creates a generic `GameRunner` class templated on the type of game board elements for flexibility and reusability.
+
+4. **Concurrency**: Handles the game loop and user input simultaneously using separate threads (`std::jthread`).
+
+5. **Lambdas**: Uses lambda expressions for concise and inline functionality, such as filtering game board positions.
+
+6. **std::barrier**: Coordinates the execution of game loop and input processing threads to ensure synchronization.
+
+7. **std::format**: Provides type-safe string formatting for output messages.
+
+8. **std::ranges**: Performs operations on ranges of elements, aiding in the placement of game objects.
+
+---
+
+## Requirements
+
+- C++20 compiler
+- CMake 3.12 or higher
+
+## How to Play
+
+- Use the W, A, S, D keys to move the player up, left, down, and right, respectively.
+- Collect coins to increase your score and progress to the next level.
+- Avoid touching the fires, as they will decrease your HP.
+- Collect healing items (H) to restore your HP.
+- Press 'q' to quit the game at any time.
+- Press 'r' to restart the game at any time.
+
+---
+
+## Code Structure
+
+The project is organized into the following files:
+
+- `GameRunner.h`: Header file containing the declaration of the `GameRunner` class.
+- `GameRunner.cpp`: Implementation file for the `GameRunner` class, containing the game logic and mechanics.
+- `main.cpp`: Entry point of the program, creates an instance of `GameRunner` and starts the game.
+- `CMakeLists.txt`: CMake configuration file for building the project.
+
+---
+
+## Dependencies
+
+The project relies on the following C++ features and libraries:
+
+- C++20 standard library
+- `<thread>` for multi-threading support
+- `<chrono>` for time-related functionality
+- `<format>` for string formatting (C++20 feature)
+- `<barrier>` for thread synchronization (C++20 feature)
+- `<ranges>` for range-based operations (C++20 feature)
