@@ -112,7 +112,7 @@ function FooterDescription() {
         About Me
       </div>
       <p className={clsx('mb-4 font-normal leading-relaxed')}>
-        奔走共雷霆 染血予荆棘
+        心无旁骛似明镜 无风何处起涟漪
       </p>
       <ul className={clsx('-ml-2 flex gap-1')}>
         <li>
