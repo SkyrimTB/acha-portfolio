@@ -48,7 +48,7 @@ export const formatLang = (lang: TPostFrontMatter['lang']) => {
     case 'id':
       return 'Bahasa Indonesia';
     case 'zh':
-      return 'Simplified Chinese';
+      return '简体中文';
     case 'en':
       return 'English';
     default:

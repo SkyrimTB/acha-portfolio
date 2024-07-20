@@ -40,3 +40,9 @@ sitemap.xml
 # prevent accidentally committing and pushing draft files/directories
 *((DRAFT))*
 .vercel
+apps/enji.dev/src/pages/blog/the-2023-retrospective copy.mdx
+apps\enji.dev\src\pages\blog\id-tailwindcss-best-practices.mdx
+apps\enji.dev\src\pages\blog\fitur-multiple-reactions-di-nextjs.mdx
+apps\enji.dev\src\pages\blog\tailwindcss-best-practices.mdx
+apps\enji.dev\src\pages\blog\tentang-nextjs-tailwind-css-dan-framer-motion.mdx
+apps\enji.dev\src\pages\blog\the-2022-retrospective.mdx

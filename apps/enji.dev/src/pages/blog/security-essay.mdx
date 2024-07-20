@@ -1,0 +1,99 @@
+---
+title: MLIM Model for Online Games
+description: An improved online gameing security model for game development.
+date: '2023-11-28'
+lang: en
+tags:
+  - Cyber Security
+  - Online Games
+category: tech
+---
+
+import Image from '@/components/mdx/Image';
+
+This paper proposes a new improved multi-layer security model for online gaming, addressing persistent vulnerabilities and user-end security concerns, to establish a safer and more trustworthy gaming environment.
+
+---
+
+## Introduction
+
+The online gaming landscape has experienced a significant transformation these years, transitioning from a leisurely pastime to a potential revenue stream for enthusiasts _(Halalobau, 2018)_. With this evolution, the security of gaming platforms and accounts has become more important than ever. This paper delves into the challenges and proposes a new security framework to protect the online gaming community and game players.
+
+## Value
+
+The main reason for writing this article is that security problems often occur in mainstream online games and game platforms. Unlike social accounts, game accounts have more complex usage scenarios, and traditional defenses are no longer powerful enough for players. By exploring and proposing a refined security model, this paper aims to contribute to game developers and operators improving the reliability of account security.
+
+---
+
+## Existing Challenges
+
+Over the past decade, online gaming has primarily been a source of entertainment. However, as technology and internet connectivity have advanced, an entire ecosystem of games has emerged. Nowadays, gamers invest large amounts of time and money into developing their game accounts, acquiring items, and achieving higher ranks. As a result, these accounts and valuable items have become targets for cybercriminals _(Kim, S. Yang & H. K. Kim, 2017)_.
+
+Sharing accounts is very common, especially among gamers. Most account-sharing actions are intentional, with individuals aware of potential privacy and security risks. In the US, 54% of people have shared their accounts before, with streaming applications like Netflix and Hulu reaching a 75% sharing rate _(Wang & Islam, 2023)_.
+
+For the most of time, account owners share their accounts for acquiring items or levelling up. For example, in massively multiplayer online role-playing games _(MMORPGs) like War of Warcraft, players invest hundreds of hours acquiring in-game currency, items, and skills. These virtual assets hold real-world value and are often traded on various platforms. As a result, boosting service studios come up, of which boosters use buyer's accounts for acquiring items (Efe, 2020)_. Besides, the rise of e-sports and live streaming has led to "MMR boosting" _(Match Making Rating), where players hire others to use their accounts to improve their rank (Wang & Islam, 2023)_. In these scenarios, account hijacking, where attackers gain unauthorized access to a player's account, appears frequently. Another example is the phenomenon of 'gold farming', where players accumulate in-game items and sell them for real money. One famous example is that a CS:GO account was hacked, which had $2 million dollars' worth of inventory, and all items were selling very quickly, far below the market average price _(Abdelghani, June 23, 2022)_.
+
+Moreover, the trend of leasing and trading game accounts also introduced new security challenges. While it allows players to experience luxury gameplay with less time investment, it also opens the door for scams and account theft. Many accounts, which are from unknown sources, are selling on the third-party platform. The sudden repossession of an account by its original owner after selling it out can lead to disputes and potential financial loss for the buyers _(Eric, 2020)_.
+
+---
+
+## A Proposed Multi-Layer Security Model
+
+Presently, the general online game security deployment game accounts include multi-factor Authentication, Geographic Alerts, Event Logs, and Automatic Logout protocols (Bature). However, despite these measures, there remain critical drawbacks and notable limitations.
+This section focuses on advocating for a more refined security model and procedure for online games and gaming platforms. Specifically, the emphasis will be on login authorization and sensitive actions in different scenarios. Introducing a multi-layer isolation model (MLIM) coined "owner-trusted user-stranger," this approach can replace the conventional single-layer isolation model of "user-others." Therefore, friends, lessees, and other similar entities will be granted enhanced access privileges to shared accounts, while critical operations like item trading and account modifications can be more effectively restricted.
+
+<Image
+  src="/assets/images/blog/security-essay/framework-of-MLIM.png"
+  alt="GAS Framework"
+  width={800}
+  height={527}
+/>
+<div style={{ textAlign: 'center' }}>Figure 1.The Framework of MLIM</div>
+
+<br />
+
+At the client login stage, as shown in Figure 1 showing, user can choose three different ways to access: Single Sign On method, the temporary password, or the root password. The root password is permanently valid, and the account logged in with this password can have the highest permissions. Temporary passwords are valid for a limited time, and the account owner can set the validity period or number of uses of their password. SSO is valid once; users need to use a trusted device to scan the QR code.
+
+<Image
+  src="/assets/images/blog/security-essay/user-occasions.png"
+  alt="GAS Framework"
+  width={800}
+  height={527}
+/>
+
+<div style={{ textAlign: 'center' }}>Figure 2. User Occasions</div>
+<br />
+
+Judging people's morality is often much simpler than sifting through the game environment. Therefore, in a distrustful environment for public networks or Internet cafes, SSO is often the most appropriate method. For rental platforms or sharing with friends, temporary passwords would be a good choice. Reducing the use of root passwords will reduce the risk of complete account loss. Any login method will not have any impact on the normal playing experience of the game account, but sensitive operations such as adding/deleting friends, crafting, etc. require administrator permission. Critical operations such as ID modification and item trading require a root password login to run smoothly.
+To prevent unnecessary losses caused by the leakage of the root password, even if the login authentication is passed, there will be additional authentication for critical operations. Famous security methods are One Time Password (OTP) and Two Factor Authorization (2FA). The Computer Science and Artificial Intelligence Lab (2022) of the Massachusetts Institute of Technology also introduced a biometric authentication method for games, which is more fitting and has nicer experiences on VR games.
+
+MLIM does not only address the current gaps in security measures but also adapts to the dynamic nature of online gaming. It ensures more granular control over account access and actions, significantly reducing the possibility of unauthorized access and misuse.
+
+## Limitations
+
+For an existing game, suddenly changing its model may be difficult for players to accept. Gradually iterating through version patches will make this change very slow _(Cui et al., 2021)_. In addition, the implementation of MLIM requires the joint support of game developers and platform operators. Because the gameplay modes of different games are various, the methods of deploying MLIM will also be various. For some games, there may be no item trading, while some games only have game skins without numerical bonuses. Also, user education is an issue that can never be avoided; there is no way to keep the account safe if the owner gives every authorization easily.
+
+## Conclusion
+
+Today's online games are diverse, and the security challenges they face are also diverse. The complex usage environment of game accounts has created a variety of potential vulnerabilities. The MILM introduced in this paper can effectively reduce the possible impact of some vulnerabilities and improve the security of online game accounts. The implications of MILM can extend beyond gaming, offering insights and frameworks that could be applied to other digital platforms facing similar security challenges. However, this requires the joint assistance of game developers, operators and players to achieve the desired results.
+
+---
+
+## Reference
+
+Abdelghani, A. _(2022, June 23)_. $2 million inventory hacked in CS:GO. Kaspersky. Retrieved November 28, 2023, from https://usa.kaspersky.com/blog/cs-go-two-million-usd-inventory-hack/26656/.
+
+Bature, R. J. (n.d.). Securing Gaming User Accounts With Fraud Detection And Suspicious Activity Notification. FusionAuth. Retrieved October 10, 2023, from https://fusionauth.io/articles/gaming-entertainment/securing-game-account
+
+Cui, LY. et al. _(2021). Research on User Privacy Security of China’s Top Ten Online Game Platforms. In: Deze, Z., Huang, H., Hou, R., Rho, S., Chilamkurti, N. (eds)_ Big Data Technologies and Applications. BDTA WiCON 2020 2020. Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering, vol 371. Springer, Cham. https://doi.org/10.1007/978-3-030-72802-1_12
+
+Ding, A., Kammer, B., Sragow, C., & Tontici, D. (2022). Biometric Video Game Authentication. Massachusetts Institute of Technology, Computer Science and Artificial Intelligence Lab. http://courses.csail.mit.edu/6.857/2022/projects/Ding-Kammer-Sragow-Tontici.pdf
+Efe, A. & Önal, E. _(2020). ONLINE Game Security: A Case Study of an MMO Strategy Game . Gazi University Journal of Science Part A: Engineering and Innovation , 7 (2)_ , 43-57 . Retrieved from https://dergipark.org.tr/en/pub/gujsa/issue/56178/527186
+
+Eric J. Hayes. (2020). Playing it Safe: Avoiding Online Gaming Risks. America's Cyber Defense Agency. https://www.cisa.gov/sites/default/files/publications/gaming.pdf
+
+Halalobau, Y. Commercialization of transactions for the sale of accounts in online games / Y. Halalobau, C. Savitskaya // European and National Dimension in Research = Европейский и национальный контексты в научных исследованиях : electronic collected materials of X Junior Researchers' Conference, Novopolotsk, May 10-11, 2018 : in 3 parts / Ministry of Education of Belarus, Polotsk State University ; ed. D. Lazouski [et al.]. - Novopolotsk : PSU, 2018. - Part 1 : Humanities. - P. 111-112.
+
+Kim, S. Yang and H. K. Kim, "Crime scene re-investigation: a postmortem analysis of game account stealers' behaviors," 2017 15th Annual Workshop on Network and Systems Support for Games (NetGames), Taipei, Taiwan, 2017, pp. 1-6, doi: 10.1109/NetGames.2017.7991540.
+
+Wang, Y. and Islam, T. (2023). Addressing Privacy and Security Concerns in Online Game Account Sharing: Detecting Players Using Mouse Dynamics. In Proceedings of the 12th International Conference on Pattern Recognition Applications and Methods - ICPRAM; ISBN 978-989-758-626-2; ISSN 2184-4313, SciTePress, pages 864-871. DOI: 10.5220/0011678300003411
