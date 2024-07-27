@@ -47,9 +47,9 @@ function Navbar() {
           <nav className={clsx('flex', 'md:gap-2')} data-accent="violet">
             <NavLogo href="/" title="Home" />
             <ul className={clsx('flex items-center', 'md:gap-1')}>
-              {/* <li>
+              <li>
                 <NavLink title="Projects" href="/projects" />
-              </li> */}
+              </li>
               <li>
                 <NavLink title="Blog" href="/blog" />
               </li>
