@@ -1,3 +1,7 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/function-component-definition */
+/* eslint-disable import/no-extraneous-dependencies */
 // components/Slider.tsx
 import clsx from 'clsx';
 import NextImage from 'next/image';
