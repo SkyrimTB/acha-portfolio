@@ -1,0 +1,206 @@
+---
+title: Parkin 🚙
+description: A mobile platform providing comprehensive parking information to help users locate nearby available parking options.
+date: '2024-01-23'
+lang: en
+tags:
+  - Figma
+  - UI/UX
+  - Product Design
+category: design
+---
+
+import Image from '@/components/mdx/Image';
+import ImageSlider from '@/components/mdx/Slider';
+
+See the final prototype from [here](https://www.figma.com/proto/Lpp9M3wZzrwDk6wTc0HBMh/Portfolio?node-id=0-1&t=5LIHBvZpNtYtb4sZ-1)
+
+## PROBLEM
+
+### 01. Background Research
+
+Based on background research, it is found about university campus parking that:
+
+- Most of the universities that don't restrict students from driving to school have problems with parking availabilities.
+- The average time students spent on finding parking spot is about 30 minutes.
+- The number of student parking permits are sold disproportionately to the number of available parking spots
+
+> **Critical Question:**
+>
+> Is parking difficulty a problem that also exists at the University of Chicago campus?
+
+### 02. Needfinding Interviews
+
+To further investigate the problem under the right context and to address the above question, I conducted 6 interviews and found surprisingly that as opposed to the background research, **lack of parking availability is not the root cause of parking difficulties at the University of Chicago, but the unclear parking information provided by different platforms.**
+
+<Image
+  src="/assets/images/blog/parkin/needfind.png"
+  width={1000}
+  height={527}
+/>
+
+> _Overall, findings from the interviews suggested a need for more clear and comprehensive parking information that help users find parking on the University of Michigan campus quickly._
+
+### 03. Personas
+
+Based on the key findings from interviews, three personas were developed to **represent three types of user groups: student, faculty and visitors. **Although these three user groups share one common goal of finding parking at the University of Michigan, **they have different needs to be addressed.** Personas remind me of who and what I am designing the product for.
+
+<ImageSlider
+  images={[
+    '/assets/images/blog/parkin/persona1.png',
+    '/assets/images/blog/parkin/persona2.png',
+    '/assets/images/blog/parkin/persona3.png',
+  ]}
+/>
+
+### 04. Competitive Analysis
+
+Competitive analysis was done to understand the services provided by local competitors and the current market. **While these competitors cover a wide range of services related to parking, none of them seems to address the user's needs discovered in the interviews -- the need for clear parking information.**
+
+<Image src="/assets/images/blog/parkin/chart.png" width={1000} height={527} />
+
+---
+
+## IDEATION
+
+### 01. QOC Diagram
+
+QOC, stands for Questions, Options, Criteria, is a method used in my analysis to **narrow down the list of possible solutions based on what I learned from the research and interviews.**These diagrams **visualized my thought processes** and why I chose to proceed with one solution rather than the others.
+
+The first OOC diagram narrowed down solutions based on whether the solutions improve user's overall parking experiences.
+
+<Image src="/assets/images/blog/parkin/OOC1.png" width={800} height={527} />
+
+The second OOC diagram evaluated whether the solutions meet user's needs of having clear parking information.
+
+<Image src="/assets/images/blog/parkin/OOC2.png" width={800} height={527} />
+
+### 02. Storyboard
+
+I created a storyboard to **capture user's behaviors** and to **understand the context or environment where the product is used and the potential constraints faced by the users.**
+
+<Image
+  src="/assets/images/blog/parkin/storyboard.png"
+  width={800}
+  height={527}
+/>
+
+### 03. Storymapping
+
+I created story maps based on the three personas and their different needs to **walk through the tasks and actions they need to take to accomplish their goals. **The story maps provided me a big picture of the product by visualizing user's journey.
+
+(storymap)
+
+By **extracting and putting together the common pieces found across the three user maps**, a common path is developed. This common path allowed me to see the possible features that can benefit users the most and hence are worth designing.
+
+(storymap)
+
+### 04. User Flow
+
+Lastly, the user flow diagram is created to **visualize the steps users take and the decisions they need to make to complete the tasks. **I made sure that every interaction the users can make are purposeful in terms of achieving their goals. When developing prototypes, **this diagram provided me a structural guide on how to approach and helped me focused on designing the most important interactions.**
+
+(userflow)
+
+---
+
+## DESIGN
+
+### 01. Low Fidelity Prototype
+
+After confirming that the user flow is intuitive, I sketched down my first version of the prototype. For UI, I borrowed ideas from some popular apps like the map pins on Google Map and the bottom navigation bar on Amazon **because I didn't want to design a complete new interface to challenge what users have already familiar with.**
+
+(lowfidelity)
+
+### 02. Interactive Prototype
+
+**To better test on the prototype's usability, I transformed the sketches into interactive digital prototype using Figma. **Since this prototype was built for usability testing purposes, I kept the fidelity relatively low to make it easier for later adjustments.
+
+(prototype)
+
+I also created a screen flow chart to present the possible interactions users can make. Similar to the user flow diagram, **this flow chart allowed me to double check whether the interactions are meaningful and not extra steps for the users to take.**
+
+(flowchart)
+
+### 03. Usability Testing
+
+I tested the interactive prototype with 5 participants. **Without providing any verbal cues, I observed how the participants interacted with the prototype to achieve 5 different tasks I asked them to complete.** As I ran the tests, **I noticed some behaviors that might be the indicators of problems in my design, such as repetitive clicks, hesitation and clicking on elements that are not interactive.
+**
+
+These behaviors were observed when the participants have trouble finding where they can see individual result page and where they can make reservation. **To improve usability, I decided to:**
+
+- Add a list view of result page.
+- Make the reservation information more obvious on results page.
+
+---
+
+## FINAL PROTOTYPE
+
+Majority of the existing products targeted on improving pre-parking and post-parking experiences, such as making reservation and paying for existing parking, respectively. The experiences in between the pre and post experiences are largely ignored. **What makes ParkIn unique and different from current products in the market is the idea of improving parking experiences DURING the time when people are finding and deciding where to park.**
+
+As discovered in the interviews, users need clear parking information to have better parking experiences. To address such needs, **my design strongly emphasized on providing detail parking information and making sure the information they need are easily accessible to users during important interactions. **Information improves the "during" parking experiences because it allows users to make quick decision on parking even when they are in a rush.
+
+(image 123)
+
+### Key Feature #1
+
+_Customizable search filters_
+
+To specifically accommodate parking permit holders from the University of Michigan, "Permit Parking" is included in the parking type filter to allow users to locate any permit parking lots. This feature eases user's pain of searching online for campus parking maps.
+
+"Availability Now" is included as one of the filter so that users don't waste their time on finding parking spot in a full lot.
+
+(image)
+
+### Key Feature #2
+
+_Adding favorite parking location_
+
+The favorite location feature allows user to save their preferred parking locations and save their time from searching.
+
+Important information regarding the saved parking locations are shown on the same screen so users don't need to do extra clicking to find information. The information are also presented in different color to catch users' attention.
+
+(image)
+
+### Key Feature #3
+
+_Making reservation_
+
+Making reservation is simple using this feature. All the important information including price, operation hours, park time are provided to users on the same page so that users don't need to refer another page to decide whether they want to book the spot.
+
+(image)
+
+### Key Feature #4
+
+_Pushing notifications on updates_
+
+The app will keep users up to date on availability if they select to receive such notifications. In addition to the notifications, suggestions on new parking location are also generated to help users quickly navigate to new location.
+
+Updates on remaining parking time are also provided to inform users.
+
+(image)
+
+---
+
+## CHALLENGES
+
+### **Design**
+
+When building final prototypes, creating an accessible yet aesthetically appealing product was quite a challenge to me because I didn't have previous experience in graphic design or UI design. Right now, my design skills are more advanced - I develop deep understanding in different design principles including use of colors, image compositions, Gestalts principles... In the near future, I will work on refining and polishing this prototype into more professional hi-fi prototype.
+
+### **Usability Testing**
+
+I wish I could have done more usability testings on the final prototype I built and reiterate on the design since many elements in the final prototype is different from the ones in the interactive prototype. I also wish that I could have the opportunity to test ParkIn as a live app in which I were able to discover if the information provided in ParkIn are actually helpful to the users in real world.
+
+### **Technical Challenges**
+
+This design depends heavily on the implementation of high quality monitors at the parking lot or garage entrances to keep track of parking availability. It also requires an accurate real-time update of availability at the back-end so that users have access to the accurate information. Without accomplishing the two technical components mentioned above, ParkIn would not be as useful in terms of parking searching.
+
+Another aspect that I was hoping to achieve is to help users find street park more easily. This is difficult unless monitors can be implemented at every street, which is extremely expensive and not cost-effective, or ParkIn could have some agreement with street park payment companies to get access to their database and extract street parking availability information from them.
+
+### **User Dilemma**
+
+Should users receive updates on availability change while they are driving?
+
+This was a question that has always been hanging in my mind when designing ParkIn. ParkIn had the feature of sending updates when the system detects a change in availability. I decided to implement this feature because I prioritized the concept of "allowing users to make informed decision" over leaving users ignorant of the new situation. The downside of this feature is obvious, that users might get distracted by the updates while they are driving. By sending them the updates, I leave the decision on whether or not they want to check it now to the users.
+
+There could have been some solutions to this dilemma, such as sending notifications only when users stop their cars.... which is yet another technical challenge.
