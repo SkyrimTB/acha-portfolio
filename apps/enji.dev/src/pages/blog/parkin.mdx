@@ -11,7 +11,7 @@ category: design
 ---
 
 import Image from '@/components/mdx/Image';
-import ImageSlider from '@/components/mdx/Slider';
+import ImageCarousel from '@/components/mdx/ImageCarousel';
 
 See the final prototype from [here](https://www.figma.com/proto/Lpp9M3wZzrwDk6wTc0HBMh/Portfolio?node-id=0-1&t=5LIHBvZpNtYtb4sZ-1)
 
@@ -45,12 +45,28 @@ To further investigate the problem under the right context and to address the ab
 
 Based on the key findings from interviews, three personas were developed to **represent three types of user groups: student, faculty and visitors. **Although these three user groups share one common goal of finding parking at the University of Michigan, **they have different needs to be addressed.** Personas remind me of who and what I am designing the product for.
 
-<ImageSlider
+<ImageCarousel
   images={[
-    '/assets/images/blog/parkin/persona1.png',
-    '/assets/images/blog/parkin/persona2.png',
-    '/assets/images/blog/parkin/persona3.png',
+    {
+      src: '/assets/images/blog/parkin/persona1.png',
+      alt: 'Persona 1',
+      width: 500,
+      height: 400,
+    },
+    {
+      src: '/assets/images/blog/parkin/persona2.png',
+      alt: 'Persona 2',
+      width: 500,
+      height: 400,
+    },
+    {
+      src: '/assets/images/blog/parkin/persona3.png',
+      alt: 'Persona 3',
+      width: 500,
+      height: 400,
+    },
   ]}
+  interval={5000}
 />
 
 ### 04. Competitive Analysis
@@ -89,17 +105,25 @@ I created a storyboard to **capture user's behaviors** and to **understand the c
 
 I created story maps based on the three personas and their different needs to **walk through the tasks and actions they need to take to accomplish their goals. **The story maps provided me a big picture of the product by visualizing user's journey.
 
-(storymap)
+<Image
+  src="/assets/images/blog/parkin/storymap1.png"
+  width={800}
+  height={527}
+/>
 
 By **extracting and putting together the common pieces found across the three user maps**, a common path is developed. This common path allowed me to see the possible features that can benefit users the most and hence are worth designing.
 
-(storymap)
+<Image
+  src="/assets/images/blog/parkin/storymap2.png"
+  width={800}
+  height={527}
+/>
 
 ### 04. User Flow
 
 Lastly, the user flow diagram is created to **visualize the steps users take and the decisions they need to make to complete the tasks. **I made sure that every interaction the users can make are purposeful in terms of achieving their goals. When developing prototypes, **this diagram provided me a structural guide on how to approach and helped me focused on designing the most important interactions.**
 
-(userflow)
+<Image src="/assets/images/blog/parkin/userflow.png" width={800} height={527} />
 
 ---
 
@@ -109,15 +133,44 @@ Lastly, the user flow diagram is created to **visualize the steps users take and
 
 After confirming that the user flow is intuitive, I sketched down my first version of the prototype. For UI, I borrowed ideas from some popular apps like the map pins on Google Map and the bottom navigation bar on Amazon **because I didn't want to design a complete new interface to challenge what users have already familiar with.**
 
-(lowfidelity)
+<ImageCarousel
+  images={[
+    {
+      src: '/assets/images/blog/parkin/lowfi1.png',
+      alt: 'Low-Fi Prototype 1',
+      width: 700,
+      height: 400,
+    },
+    {
+      src: '/assets/images/blog/parkin/lowfi2.png',
+      alt: 'Low-Fi Prototype 2',
+      width: 700,
+      height: 400,
+    },
+  ]}
+  interval={5000}
+/>
 
 ### 02. Interactive Prototype
 
-**To better test on the prototype's usability, I transformed the sketches into interactive digital prototype using Figma. **Since this prototype was built for usability testing purposes, I kept the fidelity relatively low to make it easier for later adjustments.
+**To better test on the prototype's usability, I transformed the sketches into interactive digital prototype using Figma**. Since this prototype was built for usability testing purposes, I kept the fidelity relatively low to make it easier for later adjustments.
 
-(prototype)
+<Image
+  src="/assets/images/blog/parkin/prototype1.png"
+  alt="Prototype 1"
+  width={500}
+  height={527}
+  pair={{
+    src: '/assets/images/blog/parkin/prototype2.png',
+    alt: 'Prototype 2',
+    width: 500,
+    height: 527,
+  }}
+/>
 
-I also created a screen flow chart to present the possible interactions users can make. Similar to the user flow diagram, **this flow chart allowed me to double check whether the interactions are meaningful and not extra steps for the users to take.**
+I also created a screen flow chart to present the possible interactions users can
+make. Similar to the user flow diagram, **this flow chart allowed me to double check
+whether the interactions are meaningful and not extra steps for the users to take.**
 
 (flowchart)
 
