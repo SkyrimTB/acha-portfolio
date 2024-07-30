@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <header
-      className={clsx('fixed top-0 right-0 left-0 z-[1000]', 'fm:absolute')}
+      className={clsx('fixed left-0 right-0 top-0 z-[1000]', 'fm:absolute')}
     >
       <div
         className={clsx(
@@ -47,9 +47,9 @@ function Navbar() {
           <nav className={clsx('flex', 'md:gap-2')} data-accent="violet">
             <NavLogo href="/" title="Home" />
             <ul className={clsx('flex items-center', 'md:gap-1')}>
-              <li>
+              {/* <li>
                 <NavLink title="Projects" href="/projects" />
-              </li>
+              </li> */}
               <li>
                 <NavLink title="Blog" href="/blog" />
               </li>
