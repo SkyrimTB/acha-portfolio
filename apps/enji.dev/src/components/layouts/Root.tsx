@@ -1,17 +1,41 @@
-import {
-  JetBrains_Mono as JetBrainsMono,
-  Plus_Jakarta_Sans as PlusJakartaSans,
-} from '@next/font/google';
+import localFont from 'next/font/local';
 import clsx from 'clsx';
 import { PropsWithChildren, useEffect } from 'react';
 
-const jetbrainsMono = JetBrainsMono({
-  subsets: ['latin'],
+const jetbrainsMono = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/JetBrainsMono-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/JetBrainsMono-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/JetBrainsMono-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
   variable: '--font-mono',
 });
 
-const plusJakartaSans = PlusJakartaSans({
-  subsets: ['latin'],
+const plusJakartaSans = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/PlusJakartaSans-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/PlusJakartaSans-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
   variable: '--font-sans',
 });
 
