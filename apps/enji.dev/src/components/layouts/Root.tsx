@@ -1,4 +1,4 @@
-import localFont from 'next/font/local';
+import localFont from '@next/font/local';
 import clsx from 'clsx';
 import { PropsWithChildren, useEffect } from 'react';
 
