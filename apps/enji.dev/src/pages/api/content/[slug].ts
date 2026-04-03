@@ -46,9 +46,7 @@ export default async function handler(
       res.status(405).json({ message: 'Method Not Allowed' });
     }
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.log(err);
-
+    // TODO: Implement proper error logging (e.g., Sentry, Winston)
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }
