@@ -25,14 +25,6 @@ const projects = [
     image: '/assets/images/blog/aws-project/GAS-framework.png',
     color: 'bg-amber-300 dark:bg-amber-900',
   },
-  {
-    slug: 'parkin',
-    title: 'Parkin',
-    descKey: 'featuredProjects.projects.parkin.description',
-    tags: ['Figma', 'UI/UX', 'Product Design'],
-    image: '/assets/images/blog/parkin/prototype1.png',
-    color: 'bg-pink-300 dark:bg-pink-900',
-  },
 ];
 
 const animation = {
