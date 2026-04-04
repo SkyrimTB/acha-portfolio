@@ -12,7 +12,7 @@ import type { PropsWithChildren } from 'react';
 function Provider({ children = null }: PropsWithChildren) {
   return (
     <FramerMotionProvider>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
+      <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
         <FocusModeProvider>
           <ColorAccentProvider defaultScheme="violet">
             <GlobalStateProvider>
