@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 
+import useTranslation from '@/hooks/useTranslation';
+
 const animation = {
   hide: { x: -32, opacity: 0 },
   show: {
@@ -12,6 +14,7 @@ const animation = {
 
 function HeaderTitle() {
   const controls = useAnimationControls();
+  const { t } = useTranslation('home');
 
   return (
     <div>
@@ -25,7 +28,7 @@ function HeaderTitle() {
         animate={animation.show}
         transition={{ delay: 0.1 }}
       >
-        hi!
+        {t('header.greeting')}
         <m.div
           initial={{
             opacity: 0,
@@ -43,7 +46,7 @@ function HeaderTitle() {
         >
           <Image
             className={clsx('w-7 md:w-10')}
-            alt="Love-you Gesture"
+            alt={t('header.emojiAlt')}
             src="/assets/emojis/love-you-gesture.png"
             width={48}
             height={48}
@@ -68,11 +71,11 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.2 }}
         >
-          I&apos;m{' '}
+          {t('header.intro.im')}{' '}
           <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
-            Zehao
+            {t('header.intro.firstName')}
           </strong>{' '}
-          Zhang,{' '}
+          {t('header.intro.lastName')}{' '}
         </m.span>
         <m.h1
           className={clsx(
@@ -84,29 +87,29 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <span className={clsx('lowercase')}>AKA</span>{' '}
+          <span className={clsx('lowercase')}>{t('header.intro.aka')}</span>{' '}
           <strong
             className={clsx('font-bold  text-slate-700', 'dark:text-slate-300')}
           >
-            acha
+            {t('header.intro.nickname')}
           </strong>{' '}
-          , typical{' '}
+          {t('header.intro.typical')}{' '}
           <strong
             className={clsx(
               'font-underscore  text-slate-700',
               'dark:text-slate-300'
             )}
           >
-            ENTP
+            {t('header.intro.mbti')}
           </strong>
-          , who loves{' '}
+          {t('header.intro.whoLoves')}{' '}
           <strong
             className={clsx(
               'font-underscore  text-slate-700',
               'dark:text-slate-300'
             )}
           >
-            Game
+            {t('header.intro.game')}
           </strong>
           ,{' '}
           <strong
@@ -115,7 +118,7 @@ function HeaderTitle() {
               'dark:text-slate-300'
             )}
           >
-            Technology{' '}
+            {t('header.intro.technology')}{' '}
           </strong>
           ,
           <span className={clsx('block')}>
@@ -126,9 +129,9 @@ function HeaderTitle() {
                 'dark:text-slate-300'
               )}
             >
-              Entertainment
+              {t('header.intro.entertainment')}
             </strong>{' '}
-            and any intuitive, clean and modern design.
+            {t('header.intro.suffix')}
           </span>
         </m.h1>
       </span>

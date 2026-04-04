@@ -8,9 +8,13 @@ import {
   TwitterIcon,
 } from '@/components/Icons';
 
+import useTranslation from '@/hooks/useTranslation';
+
 import dayjs from '@/utils/dayjs';
 
 function LastUpdate() {
+  const { t } = useTranslation('common');
+
   return (
     <a
       href="https://github.com/skyrimtb"
@@ -18,7 +22,7 @@ function LastUpdate() {
       rel="noreferrer nofollow"
       className={clsx('hover:underline')}
     >
-      <span>see the recent update on GitHub</span>
+      <span>{t('footer.seeRecentUpdate')}</span>
     </a>
   );
 }
@@ -101,6 +105,8 @@ function FooterGroup({ title, links }: FooterGroupProps) {
 }
 
 function FooterDescription() {
+  const { t } = useTranslation('common');
+
   return (
     <div className={clsx('max-w-[348px]')}>
       <div
@@ -109,47 +115,23 @@ function FooterDescription() {
           'dark:text-slate-400'
         )}
       >
-        About Me
+        {t('footer.aboutMe')}
       </div>
       <p className={clsx('mb-4 font-normal leading-relaxed')}>
-        心无旁骛似明镜 无风何处起涟漪
+        {t('footer.quote')}
       </p>
       <ul className={clsx('-ml-2 flex gap-1')}>
-        <li>
-          {/* <a
-            href="https://twitter.com/enjidev"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Twitter profile"
-            title="My Twitter profile"
-          >
-            <TwitterIcon className={clsx('h-5 w-5')} />
-          </a> */}
-        </li>
         <li>
           <a
             href="https://github.com/skyrimtb"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My GitHub profile"
-            title="My GitHub profile"
+            aria-label={t('footer.myGithubProfile')}
+            title={t('footer.myGithubProfile')}
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
           </a>
-        </li>
-        <li>
-          {/* <a
-            href="https://figma.com/@enjidev"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Figma profile"
-            title="My Figma profile"
-          >
-            <FigmaIcon className={clsx('h-5 w-5')} />
-          </a> */}
         </li>
       </ul>
     </div>
@@ -157,6 +139,8 @@ function FooterDescription() {
 }
 
 function Footer() {
+  const { t } = useTranslation('common');
+
   return (
     <footer
       className={clsx(
@@ -178,35 +162,30 @@ function Footer() {
             >
               <div className={clsx('flex', 'sm:gap-16')}>
                 <FooterGroup
-                  title="Work"
+                  title={t('footer.work')}
                   links={[
-                    { title: 'Contact', href: '/work/contact' },
-                    { title: 'Experience', href: '/work/experience' },
+                    { title: t('footer.contact'), href: '/work/contact' },
+                    { title: t('footer.experience'), href: '/work/experience' },
                     {
-                      title: 'Services',
+                      title: t('footer.services'),
                       href: '/work/services',
                       label: 'soon',
                     },
-                    // {
-                    //   title: 'Skills and Tools',
-                    //   href: '/work/skills-and-tools',
-                    // },
-                    // { title: 'Studio', href: '/work/studio' },
                   ]}
                 />
                 <FooterGroup
-                  title="Learn"
+                  title={t('footer.learn')}
                   links={[
                     {
-                      title: 'Docs',
+                      title: t('footer.docs'),
                       href: '/docs',
                     },
                     {
-                      title: 'Personal Blog',
+                      title: t('footer.personalBlog'),
                       href: '/blog',
                     },
                     {
-                      title: 'T.I.L',
+                      title: t('footer.til'),
                       href: '/today-i-learned',
                       label: 'new',
                     },
@@ -215,20 +194,20 @@ function Footer() {
               </div>
               <div className={clsx('flex', 'sm:gap-16')}>
                 <FooterGroup
-                  title="This Site"
+                  title={t('footer.thisSite')}
                   links={[
                     {
-                      title: 'Design Concept',
+                      title: t('footer.designConcept'),
                       href: 'https://www.figma.com/community/file/1176392613303840973',
                       isInternal: false,
                     },
                     {
-                      title: 'Source Code',
+                      title: t('footer.sourceCode'),
                       href: 'https://github.com/enjidev/enji.dev',
                       isInternal: false,
                     },
                     {
-                      title: 'Credits',
+                      title: t('footer.credits'),
                       href: '/credits',
                     },
                   ]}
@@ -244,7 +223,7 @@ function Footer() {
           )}
         >
           <div className={clsx('font-semibold')}>
-            Thanks to this crazy programmer &copy; {dayjs().format('YYYY')},
+            {t('footer.copyright')} &copy; {dayjs().format('YYYY')},
             Enji Kusnadi
           </div>
           <div className={clsx('text-slate-500', 'dark:text-slate-400')}>

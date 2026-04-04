@@ -23,6 +23,8 @@ module.exports = {
       },
       animation: {
         'bounce-x': 'bounce-x 1s infinite',
+        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+        'breathe': 'breathe 2.5s ease-in-out infinite',
       },
       keyframes: {
         'bounce-x': {
@@ -33,6 +35,24 @@ module.exports = {
           '50%': {
             transform: 'translateX(0)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
+        'glow-pulse': {
+          '0%, 100%': {
+            boxShadow: '0 0 4px 2px rgba(139, 92, 246, 0.3)',
+          },
+          '50%': {
+            boxShadow: '0 0 12px 6px rgba(139, 92, 246, 0.6)',
+          },
+        },
+        'breathe': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 8px 4px rgba(139, 92, 246, 0.4)',
+          },
+          '50%': {
+            transform: 'scale(1.3)',
+            boxShadow: '0 0 20px 10px rgba(139, 92, 246, 0.7)',
           },
         },
       },

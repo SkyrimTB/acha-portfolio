@@ -1,6 +1,10 @@
 import clsx from 'clsx';
 
+import useTranslation from '@/hooks/useTranslation';
+
 function Error500Contents() {
+  const { t } = useTranslation('common');
+
   return (
     <div
       className={clsx(
@@ -15,7 +19,7 @@ function Error500Contents() {
       >
         <h1 className={clsx('py-12 text-center')}>
           <div className={clsx('mb-3 text-8xl font-extrabold')}>500</div>
-          <div className={clsx('text-2xl')}> Server Error </div>
+          <div className={clsx('text-2xl')}> {t('error.serverError')} </div>
         </h1>
       </div>
     </div>

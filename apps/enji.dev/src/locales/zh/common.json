@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "首页",
+    "blog": "博客",
+    "work": "工作",
+    "experience": "过往经历",
+    "contact": "联系方式",
+    "github": "GitHub"
+  },
+  "footer": {
+    "aboutMe": "关于我",
+    "quote": "心无旁骛似明镜 无风何处起涟漪",
+    "work": "工作",
+    "learn": "学习",
+    "thisSite": "本站",
+    "contact": "联系方式",
+    "experience": "工作经历",
+    "services": "服务",
+    "docs": "文档",
+    "personalBlog": "个人博客",
+    "til": "每日一学",
+    "designConcept": "设计理念",
+    "sourceCode": "源代码",
+    "credits": "致谢",
+    "copyright": "Thanks to this CRAZY programmer",
+    "seeRecentUpdate": "在 GitHub 上查看最近更新",
+    "soon": "即将推出",
+    "new": "新",
+    "myGithubProfile": "我的 GitHub 主页"
+  },
+  "error": {
+    "pageNotFound": "页面未找到",
+    "serverError": "服务器错误",
+    "backToHomepage": "返回首页"
+  },
+  "actionCenter": {
+    "title": "操作中心",
+    "darkModeOn": "深色模式：开",
+    "darkModeOff": "深色模式：关",
+    "focusOn": "专注模式：开",
+    "focusOff": "专注模式：关"
+  }
+}

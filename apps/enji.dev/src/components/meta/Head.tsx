@@ -1,6 +1,9 @@
 import NextHead from 'next/head';
+import { useRouter } from 'next/router';
 
 import useCurrentUrl from '@/hooks/useCurrentUrl';
+
+import { getBaseUrl } from '@/helpers/url';
 
 interface HeadProps {
   title: string;
@@ -18,8 +21,11 @@ function Head({
   structuredData = '',
 }: HeadProps) {
   const currentUrl = useCurrentUrl();
+  const { locale, pathname } = useRouter();
+  const baseUrl = getBaseUrl();
 
   const htmlTitle = overrideTitle ? title : `${title} — acha`;
+  const ogLocale = locale === 'zh' ? 'zh_CN' : 'en_US';
 
   return (
     <NextHead>
@@ -29,8 +35,12 @@ function Head({
 
       {/* seo */}
       <link rel="canonical" href={currentUrl} />
+      <link rel="alternate" hrefLang="en" href={`${baseUrl}${pathname}`} />
+      <link rel="alternate" hrefLang="zh" href={`${baseUrl}/zh${pathname}`} />
+      <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${pathname}`} />
 
-      {/* og image */}
+      {/* og */}
+      <meta property="og:locale" content={ogLocale} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />

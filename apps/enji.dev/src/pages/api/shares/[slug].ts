@@ -39,7 +39,7 @@ export default async function handler(
       res.status(405).json({ message: 'Method Not Allowed' });
     }
   } catch (err) {
-    // TODO: Implement proper error logging (e.g., Sentry, Winston)
+
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }

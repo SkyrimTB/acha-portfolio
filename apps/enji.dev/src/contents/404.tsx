@@ -1,7 +1,11 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
+import useTranslation from '@/hooks/useTranslation';
+
 function Error404Contents() {
+  const { t } = useTranslation('common');
+
   return (
     <div
       className={clsx(
@@ -16,7 +20,7 @@ function Error404Contents() {
       >
         <h1 className={clsx('py-12 text-center')}>
           <div className={clsx('mb-3 text-8xl font-extrabold')}>404</div>
-          <div className={clsx('text-2xl')}> Page Not Found </div>
+          <div className={clsx('text-2xl')}> {t('error.pageNotFound')} </div>
         </h1>
         <Link
           href="/"
@@ -25,7 +29,7 @@ function Error404Contents() {
             'dark:text-accent-400'
           )}
         >
-          back to homepage
+          {t('error.backToHomepage')}
         </Link>
       </div>
     </div>

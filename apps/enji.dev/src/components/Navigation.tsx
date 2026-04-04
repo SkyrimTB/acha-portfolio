@@ -6,19 +6,20 @@ import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
 import NavLink from '@/components/navigations/NavLink';
 import NavLinkDropdown from '@/components/navigations/NavLinkDropdown';
 import NavLinkExpanded from '@/components/navigations/NavLinkExpanded';
+import NavLocaleSwitch from '@/components/navigations/NavLocaleSwitch';
 import NavLogo from '@/components/navigations/NavLogo';
 
 import useOnScroll from '@/hooks/useOnScroll';
-
-const workLinks = [
-  // { title: 'Skills & Tools', href: '/work/skills-and-tools' },
-  { title: 'Experience', href: '/work/experience' },
-  // { title: 'Studio', href: '/work/studio' },
-  { title: 'Contact', href: '/work/contact' },
-];
+import useTranslation from '@/hooks/useTranslation';
 
 function Navbar() {
   const isScrolled = useOnScroll(0);
+  const { t } = useTranslation('common');
+
+  const workLinks = [
+    { title: t('nav.experience'), href: '/work/experience' },
+    { title: t('nav.contact'), href: '/work/contact' },
+  ];
 
   return (
     <header
@@ -45,39 +46,29 @@ function Navbar() {
           )}
         >
           <nav className={clsx('flex', 'md:gap-2')} data-accent="violet">
-            <NavLogo href="/" title="Home" />
+            <NavLogo href="/" title={t('nav.home')} />
             <ul className={clsx('flex items-center', 'md:gap-1')}>
-              {/* <li>
-                <NavLink title="Projects" href="/projects" />
-              </li> */}
               <li>
-                <NavLink title="Blog" href="/blog" />
+                <NavLink title={t('nav.blog')} href="/blog" />
               </li>
-              {/* <li>
-                <NavLink title="T.I.L" href="/today-i-learned" />
-              </li> */}
               <li className={clsx('lg:hidden')} data-accent="blue">
-                <NavLinkDropdown title="Work" items={workLinks} />
+                <NavLinkDropdown title={t('nav.work')} items={workLinks} />
               </li>
               <li className={clsx('hidden lg:block')} data-accent="blue">
-                <NavLinkExpanded title="Work" items={workLinks} />
+                <NavLinkExpanded title={t('nav.work')} items={workLinks} />
               </li>
             </ul>
           </nav>
           <ul className={clsx('flex items-center')}>
-            {/* <li className={clsx('hidden', 'sm:block')}>
-              <NavIcon
-                href="https://twitter.com/enjidev"
-                icon={<TwitterIcon className={clsx('h-5 w-5')} />}
-                title="Twitter"
-              />
-            </li> */}
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
                 href="https://github.com/skyrimtb"
                 icon={<GitHubIcon className={clsx('h-5 w-5')} />}
-                title="GitHub"
+                title={t('nav.github')}
               />
+            </li>
+            <li className={clsx('hidden', 'sm:block')}>
+              <NavLocaleSwitch />
             </li>
             <li className={clsx('hidden', 'sm:block')}>
               <div

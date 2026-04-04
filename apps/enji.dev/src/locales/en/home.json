@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Zehao Zhang · aka acha",
+    "description": "An online portfolio featuring a showcase of my projects."
+  },
+  "header": {
+    "greeting": "hi!",
+    "emojiAlt": "Love-you Gesture",
+    "intro": {
+      "im": "I'm",
+      "firstName": "Zehao",
+      "lastName": "Zhang,",
+      "aka": "AKA",
+      "nickname": "acha",
+      "typical": ", typical",
+      "mbti": "ENTP",
+      "whoLoves": ", who loves",
+      "game": "Game",
+      "technology": "Technology",
+      "entertainment": "Entertainment",
+      "suffix": "and any intuitive, clean and modern design."
+    },
+    "contactButton": "Get in Touch",
+    "resumeButton": "RESUME",
+    "availableForHire": "AVAILABLE FOR HIRE",
+    "techStackLabel": "some little familiar tech stack/tools:"
+  },
+  "featuredCards": {
+    "design": {
+      "title": "Design & Production",
+      "desc": "Creative and active carfting with collaborative and inclusive attitude. "
+    },
+    "code": {
+      "title": "Programming & Coding",
+      "desc": "Writing clean code is my top priority while keeping it as optimized as possible."
+    },
+    "dream": {
+      "title": "Dream & Passion",
+      "desc": "Bring something AWESOME to the public and let them know me."
+    }
+  },
+  "quote": {
+    "line1": "Running round",
+    "line2prefix": "And with a ",
+    "line2bold": "Thunder",
+    "line3prefix": "To bleed from ",
+    "line3bold": "Thorns."
+  },
+  "featuredProjects": {
+    "caption": "Featured Projects",
+    "title": "Projects I've Been Working On.",
+    "description": "A selection of projects that showcase my skills across game design, web development, and product design.",
+    "seeAll": "see all posts",
+    "projects": {
+      "belay": {
+        "description": "A single-page Slack clone for real-time workplace messaging, built with React and Flask."
+      },
+      "aws-project": {
+        "description": "A fully functional software-as-a-service for genomics annotation on AWS."
+      },
+      "parkin": {
+        "description": "A mobile platform providing comprehensive parking information with intuitive UI/UX."
+      }
+    }
+  },
+  "timeline": {
+    "caption": "Timeline",
+    "title": "My Story So Far.",
+    "description": "From pixels to production — the milestones that shaped me.",
+    "milestones": [
+      { "text": "Born" },
+      { "text": "First Video Game" },
+      { "text": "Got Xbox 360" },
+      { "text": "PUBG Australia Open" },
+      { "text": "University of Sydney" },
+      { "text": "Valorant Pro Player" },
+      { "text": "ByteDance · Data Engineer Intern", "sub": "Hangzhou, CN" },
+      { "text": "Alipay · Data Engineer Intern", "sub": "Hangzhou, CN" },
+      { "text": "Tencent TiMi J3 · Game Designer Intern", "sub": "Shenzhen, CN" },
+      { "text": "Tencent PUBG Mobile · Technical Designer Intern", "sub": "Shenzhen, CN" },
+      { "text": "UChicago CS Master's" },
+      { "text": "TikTok · Software Engineer Intern", "sub": "San Jose, CA" },
+      { "text": "NetEase Marvel Rivals · Combat & Character Designer", "sub": "Guangzhou, CN" },
+      { "text": "To be continued..." }
+    ]
+  }
+}

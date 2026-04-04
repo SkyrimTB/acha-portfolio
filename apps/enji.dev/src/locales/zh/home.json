@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "张泽昊 · aka acha",
+    "description": "我的在线作品集，展示我的项目与经历。"
+  },
+  "header": {
+    "greeting": "你好！",
+    "emojiAlt": "比心手势",
+    "intro": {
+      "im": "我是",
+      "firstName": "张泽昊",
+      "lastName": ",",
+      "aka": "也叫",
+      "nickname": "acha",
+      "typical": "，典型的",
+      "mbti": "ENTP",
+      "whoLoves": ", 专注于:",
+      "game": "游戏",
+      "technology": "科技",
+      "entertainment": "娱乐",
+      "suffix": "以及一切直觉、简洁、现代的设计"
+    },
+    "contactButton": "联系方式",
+    "resumeButton": "我的简历",
+    "availableForHire": "开放求职中",
+    "techStackLabel": "一些熟悉的技术栈/工具："
+  },
+  "featuredCards": {
+    "design": {
+      "title": "设计 & 制作",
+      "desc": "以协作和包容的态度，积极投入创意工作"
+    },
+    "code": {
+      "title": "编程 & 开发",
+      "desc": "干净、纯粹的编程是我的首要目标，同时尽可能保持最优性能"
+    },
+    "dream": {
+      "title": "梦想 & 热情",
+      "desc": "把真正伟大的东西带给大家，让世界认识我"
+    }
+  },
+  "quote": {
+    "line1": "人生到处",
+    "line2prefix": "",
+    "line2bold": "知何似",
+    "line3prefix": "恰似飞鸿",
+    "line3bold": "踏雪泥"
+  },
+  "featuredProjects": {
+    "caption": "精选项目",
+    "title": "我做过的一些项目",
+    "description": "精选的项目作品，涵盖游戏设计、Web 开发和产品设计",
+    "seeAll": "查看全部文章",
+    "projects": {
+      "belay": {
+        "description": "一个基于 React 和 Flask 的单页 Slack 聊天工具，支持实时职场通讯"
+      },
+      "aws-project": {
+        "description": "一个基于 AWS 的基因组注释全功能 SaaS 平台"
+      },
+      "parkin": {
+        "description": "一个提供全面停车信息、拥有直觉化 UI/UX 的移动平台"
+      }
+    }
+  },
+  "timeline": {
+    "caption": "时间线",
+    "title": "我的故事",
+    "description": "从像素到产品——塑造我的那些里程碑",
+    "milestones": [
+      { "text": "出生" },
+      { "text": "第一次玩游戏" },
+      { "text": "拥有了 Xbox 360" },
+      { "text": "PUBG 全澳公开赛" },
+      { "text": "悉尼大学本科" },
+      { "text": "Valorant 职业选手" },
+      { "text": "字节跳动 · 数据工程实习", "sub": "中国杭州" },
+      { "text": "支付宝 · 数据工程实习", "sub": "中国杭州" },
+      { "text": "腾讯天美 J3 · 游戏策划实习", "sub": "中国深圳" },
+      { "text": "腾讯光子 PUBG Mobile · 技术策划实习", "sub": "中国深圳" },
+      { "text": "芝加哥大学 CS 硕士" },
+      { "text": "TikTok · 软件工程实习", "sub": "San Jose, CA" },
+      { "text": "网易 Marvel Rivals · 战斗&角色设计师", "sub": "中国广州" },
+      { "text": "未完待续…" }
+    ]
+  }
+}

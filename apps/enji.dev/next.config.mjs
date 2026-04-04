@@ -5,6 +5,10 @@ import remarkPlugins from 'remark-plugins';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ['en', 'zh'],
+    defaultLocale: 'en',
+  },
   redirects: async () => [
     {
       source: '/work',

@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "work": "Work",
+    "experience": "Experience",
+    "contact": "Contact",
+    "github": "GitHub"
+  },
+  "footer": {
+    "aboutMe": "About Me",
+    "quote": "心无旁骛似明镜 无风何处起涟漪",
+    "work": "Work",
+    "learn": "Learn",
+    "thisSite": "This Site",
+    "contact": "Contact",
+    "experience": "Experience",
+    "services": "Services",
+    "docs": "Docs",
+    "personalBlog": "Personal Blog",
+    "til": "T.I.L",
+    "designConcept": "Design Concept",
+    "sourceCode": "Source Code",
+    "credits": "Credits",
+    "copyright": "Thanks to this crazy programmer",
+    "seeRecentUpdate": "see the recent update on GitHub",
+    "soon": "soon",
+    "new": "new",
+    "myGithubProfile": "My GitHub profile"
+  },
+  "error": {
+    "pageNotFound": "Page Not Found",
+    "serverError": "Server Error",
+    "backToHomepage": "back to homepage"
+  },
+  "actionCenter": {
+    "title": "Action Center",
+    "darkModeOn": "Dark Mode: On",
+    "darkModeOff": "Dark Mode: Off",
+    "focusOn": "Focus: On",
+    "focusOff": "Focus: Off"
+  }
+}

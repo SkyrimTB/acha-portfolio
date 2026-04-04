@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import { DocumentIcon } from '@/components/Icons';
 
+import useTranslation from '@/hooks/useTranslation';
+
 const animation = {
   hide: {
     x: -16,
@@ -21,17 +23,21 @@ interface HeaderCtaProps {
 }
 
 function ButtonContactMe() {
+  const { t } = useTranslation('home');
+
   return (
     <Link
       href="/work/contact"
       className={clsx('button button--solid min-w-[128px]', 'md:button--big')}
     >
-      Get in Touch
+      {t('header.contactButton')}
     </Link>
   );
 }
 
 function ButtonResume() {
+  const { t } = useTranslation('home');
+
   return (
     <a
       target="_blank"
@@ -40,12 +46,14 @@ function ButtonResume() {
       className={clsx('button button--ghost px-2', 'md:button--big md:px-2')}
     >
       <DocumentIcon className={clsx('h-5 w-5')} />
-      RESUME
+      {t('header.resumeButton')}
     </a>
   );
 }
 
 function AvailableForHire() {
+  const { t } = useTranslation('home');
+
   return (
     <div
       className={clsx(
@@ -68,7 +76,7 @@ function AvailableForHire() {
           )}
         />
       </span>
-      AVAILABLE FOR HIRE
+      {t('header.availableForHire')}
     </div>
   );
 }

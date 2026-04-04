@@ -2,7 +2,11 @@ import clsx from 'clsx';
 
 import { QuoteIcon } from '@/components/Icons';
 
+import useTranslation from '@/hooks/useTranslation';
+
 function Quote() {
+  const { t } = useTranslation('home');
+
   return (
     <blockquote
       className={clsx(
@@ -20,7 +24,7 @@ function Quote() {
       />
       <span className={clsx('flex flex-col')}>
         <span className={clsx('leading-[1.15]')}>
-          <em>Running round</em>{' '}
+          <em>{t('quote.line1')}</em>{' '}
         </span>
         <span
           className={clsx('flex items-center gap-2 leading-[1.15]', 'lg:gap-4')}
@@ -33,14 +37,14 @@ function Quote() {
             )}
           />
           <span>
-            And with a{' '}
+            {t('quote.line2prefix')}
             <strong
               className={clsx(
                 'font-extrabold text-slate-600',
                 'dark:text-slate-300'
               )}
             >
-              Thunder
+              {t('quote.line2bold')}
             </strong>
           </span>
           <span
@@ -52,7 +56,7 @@ function Quote() {
           />
         </span>
         <span className={clsx('leading-[1.15]')}>
-          To bleed from{' '}
+          {t('quote.line3prefix')}
           <strong
             className={clsx(
               'relative font-extrabold text-slate-600',
@@ -66,7 +70,7 @@ function Quote() {
                 'dark:bg-slate-800'
               )}
             />
-            Thorns.
+            {t('quote.line3bold')}
           </strong>
         </span>
       </span>
