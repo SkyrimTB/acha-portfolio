@@ -60,13 +60,13 @@ const itemRightVariants = {
   },
 };
 
-// Mobile always slides from right
+// Mobile: easeOut instead of spring to avoid oscillation/jitter on touch scroll
 const itemMobileVariants = {
-  hidden: { x: 30, opacity: 0 },
+  hidden: { x: 20, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: 'spring', stiffness: 100, damping: 15 },
+    transition: { duration: 0.4, ease: 'easeOut' },
   },
 };
 
@@ -81,7 +81,7 @@ function TimelineDot({
     // Outer wrapper for CSS glow animation, inner for framer-motion scale entrance
     // Separated to avoid CSS transform conflicting with framer-motion transform
     return (
-      <div className={clsx('relative z-10 animate-breathe')}>
+      <div className={clsx('relative z-10 animate-breathe rounded-full')}>
         <m.div
           className={clsx(
             'h-5 w-5 rounded-full',
@@ -103,7 +103,7 @@ function TimelineDot({
   }
 
   return (
-    <div className={clsx('relative z-10 animate-glow-pulse')}>
+    <div className={clsx('relative z-10 animate-glow-pulse rounded-full')}>
       <m.div
         className={clsx(
           'h-3.5 w-3.5 rounded-full',
@@ -199,20 +199,12 @@ function MilestoneItem({
           <TimelineDot isNow={isNow} delay={delay} />
         </div>
         <m.div
-          className={clsx(
-            'min-w-0 flex-1 cursor-default',
-            'transition-transform duration-200 md:hover:scale-105'
-          )}
+          className={clsx('min-w-0 flex-1 cursor-default')}
           variants={itemMobileVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{
-            type: 'spring',
-            stiffness: 100,
-            damping: 15,
-            delay,
-          }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay }}
         >
           <MilestoneContent
             year={year}
