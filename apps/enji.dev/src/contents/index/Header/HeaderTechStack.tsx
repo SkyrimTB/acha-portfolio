@@ -44,7 +44,7 @@ function HeaderTechStack() {
       </m.p>
       <m.ul
         className={clsx(
-          'flex items-center gap-3.5 text-slate-500',
+          'flex flex-wrap items-center gap-3.5 text-slate-500',
           'dark:text-slate-500'
         )}
         initial="hide"
