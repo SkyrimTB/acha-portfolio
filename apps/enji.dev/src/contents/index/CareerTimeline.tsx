@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { m } from 'framer-motion';
+import { useState } from 'react';
 
 import SectionContent from '@/components/sections/SectionContent';
 import SectionTitle from '@/components/sections/SectionTitle';
@@ -28,15 +29,6 @@ const lineVariants = {
   visible: {
     scaleY: 1,
     transition: { duration: 1.8, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
-const dotVariants = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: { type: 'spring', stiffness: 300, damping: 20 },
   },
 };
 
@@ -77,42 +69,25 @@ function TimelineDot({
   isNow?: boolean;
   delay: number;
 }) {
-  if (isNow) {
-    // Outer wrapper for CSS glow animation, inner for framer-motion scale entrance
-    // Separated to avoid CSS transform conflicting with framer-motion transform
-    return (
-      <div className={clsx('relative z-10 animate-breathe rounded-full')}>
-        <m.div
-          className={clsx(
-            'h-5 w-5 rounded-full',
-            'bg-gradient-to-br from-violet-500 to-blue-500'
-          )}
-          variants={dotVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 20,
-            delay,
-          }}
-        />
-      </div>
-    );
-  }
+  const [entered, setEntered] = useState(false);
+  const glowClass = isNow ? 'animate-breathe' : 'animate-glow-pulse';
 
   return (
-    <div className={clsx('relative z-10 animate-glow-pulse rounded-full')}>
+    <div
+      className={clsx(
+        'relative z-10 rounded-full',
+        entered && glowClass
+      )}
+    >
       <m.div
         className={clsx(
-          'h-3.5 w-3.5 rounded-full',
-          'bg-gradient-to-br from-violet-400 to-blue-400',
-          'dark:from-violet-500 dark:to-blue-500'
+          'rounded-full',
+          isNow
+            ? 'h-5 w-5 bg-gradient-to-br from-violet-500 to-blue-500'
+            : 'h-3.5 w-3.5 bg-gradient-to-br from-violet-400 to-blue-400 dark:from-violet-500 dark:to-blue-500'
         )}
-        variants={dotVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
         transition={{
           type: 'spring',
@@ -120,6 +95,7 @@ function TimelineDot({
           damping: 20,
           delay,
         }}
+        onAnimationComplete={() => setEntered(true)}
       />
     </div>
   );
