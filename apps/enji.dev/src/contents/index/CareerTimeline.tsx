@@ -184,80 +184,19 @@ function MilestoneItem({
   const delay = index * 0.1;
 
   return (
-    <div
-      className={clsx(
-        'flex items-center gap-4',
-        'md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6'
-      )}
-    >
-      {/* Left content (desktop only) */}
-      <div
-        className={clsx('hidden md:flex', isLeft ? 'justify-end' : '')}
-      >
-        {isLeft && (
-          <m.div
-            className={clsx(
-              'cursor-default text-right',
-              'transition-transform duration-200 hover:scale-105'
-            )}
-            variants={itemLeftVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{
-              type: 'spring',
-              stiffness: 80,
-              damping: 14,
-              delay,
-            }}
-          >
-            <MilestoneContent
-              year={year}
-              label={label}
-              sub={sub}
-              isNow={isNow}
-            />
-          </m.div>
-        )}
-      </div>
-
-      {/* Center dot */}
-      <div className={clsx('flex shrink-0 items-center justify-center')}>
-        <TimelineDot isNow={isNow} delay={delay} />
-      </div>
-
-      {/* Right content (desktop) / Only content (mobile) */}
-      <div className={clsx('flex-1 md:flex', !isLeft ? '' : 'md:opacity-0')}>
-        {!isLeft && (
-          <m.div
-            className={clsx(
-              'hidden cursor-default md:block',
-              'transition-transform duration-200 hover:scale-105'
-            )}
-            variants={itemRightVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{
-              type: 'spring',
-              stiffness: 80,
-              damping: 14,
-              delay,
-            }}
-          >
-            <MilestoneContent
-              year={year}
-              label={label}
-              sub={sub}
-              isNow={isNow}
-            />
-          </m.div>
-        )}
-
-        {/* Mobile */}
+    <>
+      {/* Mobile layout: dot left, content right */}
+      <div className={clsx('flex items-start gap-4 md:hidden')}>
+        <div
+          className={clsx(
+            'flex w-[14px] shrink-0 items-center justify-center pt-1.5'
+          )}
+        >
+          <TimelineDot isNow={isNow} delay={delay} />
+        </div>
         <m.div
           className={clsx(
-            'md:hidden cursor-default',
+            'min-w-0 flex-1 cursor-default',
             'transition-transform duration-200 hover:scale-105'
           )}
           variants={itemMobileVariants}
@@ -279,7 +218,77 @@ function MilestoneItem({
           />
         </m.div>
       </div>
-    </div>
+
+      {/* Desktop layout: alternating left/right */}
+      <div
+        className={clsx(
+          'hidden md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6'
+        )}
+      >
+        {/* Left column */}
+        <div className={clsx('flex', isLeft ? 'justify-end' : '')}>
+          {isLeft && (
+            <m.div
+              className={clsx(
+                'cursor-default text-right',
+                'transition-transform duration-200 hover:scale-105'
+              )}
+              variants={itemLeftVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{
+                type: 'spring',
+                stiffness: 80,
+                damping: 14,
+                delay,
+              }}
+            >
+              <MilestoneContent
+                year={year}
+                label={label}
+                sub={sub}
+                isNow={isNow}
+              />
+            </m.div>
+          )}
+        </div>
+
+        {/* Center dot */}
+        <div className={clsx('flex items-center justify-center')}>
+          <TimelineDot isNow={isNow} delay={delay} />
+        </div>
+
+        {/* Right column */}
+        <div>
+          {!isLeft && (
+            <m.div
+              className={clsx(
+                'cursor-default',
+                'transition-transform duration-200 hover:scale-105'
+              )}
+              variants={itemRightVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{
+                type: 'spring',
+                stiffness: 80,
+                damping: 14,
+                delay,
+              }}
+            >
+              <MilestoneContent
+                year={year}
+                label={label}
+                sub={sub}
+                isNow={isNow}
+              />
+            </m.div>
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -296,10 +305,11 @@ function CareerTimeline() {
       </header>
       <SectionContent>
         <div className={clsx('relative mx-auto max-w-2xl py-8')}>
-          {/* Animated gradient line */}
+          {/* Animated gradient line — mobile: aligned with 14px dot container center; desktop: centered */}
           <m.div
             className={clsx(
-              'absolute left-[7px] top-0 h-full w-px md:left-1/2 md:-translate-x-1/2',
+              'absolute top-0 h-full w-px',
+              'left-[6.5px] md:left-1/2 md:-translate-x-1/2',
               'bg-gradient-to-b from-violet-500 via-blue-500 to-violet-500/20'
             )}
             style={{ originY: 0 }}
