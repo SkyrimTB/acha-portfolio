@@ -47,11 +47,9 @@ module.exports = {
         },
         'breathe': {
           '0%, 100%': {
-            transform: 'scale(1)',
             boxShadow: '0 0 8px 4px rgba(139, 92, 246, 0.4)',
           },
           '50%': {
-            transform: 'scale(1.3)',
             boxShadow: '0 0 20px 10px rgba(139, 92, 246, 0.7)',
           },
         },

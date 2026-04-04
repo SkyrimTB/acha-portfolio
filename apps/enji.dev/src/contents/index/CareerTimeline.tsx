@@ -78,12 +78,37 @@ function TimelineDot({
   delay: number;
 }) {
   if (isNow) {
+    // Outer wrapper for CSS glow animation, inner for framer-motion scale entrance
+    // Separated to avoid CSS transform conflicting with framer-motion transform
     return (
+      <div className={clsx('relative z-10 animate-breathe')}>
+        <m.div
+          className={clsx(
+            'h-5 w-5 rounded-full',
+            'bg-gradient-to-br from-violet-500 to-blue-500'
+          )}
+          variants={dotVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{
+            type: 'spring',
+            stiffness: 300,
+            damping: 20,
+            delay,
+          }}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className={clsx('relative z-10 animate-glow-pulse')}>
       <m.div
         className={clsx(
-          'relative z-10 h-5 w-5 rounded-full',
-          'bg-gradient-to-br from-violet-500 to-blue-500',
-          'animate-breathe'
+          'h-3.5 w-3.5 rounded-full',
+          'bg-gradient-to-br from-violet-400 to-blue-400',
+          'dark:from-violet-500 dark:to-blue-500'
         )}
         variants={dotVariants}
         initial="hidden"
@@ -96,28 +121,7 @@ function TimelineDot({
           delay,
         }}
       />
-    );
-  }
-
-  return (
-    <m.div
-      className={clsx(
-        'relative z-10 h-3.5 w-3.5 rounded-full',
-        'bg-gradient-to-br from-violet-400 to-blue-400',
-        'dark:from-violet-500 dark:to-blue-500',
-        'animate-glow-pulse'
-      )}
-      variants={dotVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{
-        type: 'spring',
-        stiffness: 300,
-        damping: 20,
-        delay,
-      }}
-    />
+    </div>
   );
 }
 
@@ -197,7 +201,7 @@ function MilestoneItem({
         <m.div
           className={clsx(
             'min-w-0 flex-1 cursor-default',
-            'transition-transform duration-200 hover:scale-105'
+            'transition-transform duration-200 md:hover:scale-105'
           )}
           variants={itemMobileVariants}
           initial="hidden"
@@ -231,7 +235,7 @@ function MilestoneItem({
             <m.div
               className={clsx(
                 'cursor-default text-right',
-                'transition-transform duration-200 hover:scale-105'
+                'transition-transform duration-200 md:hover:scale-105'
               )}
               variants={itemLeftVariants}
               initial="hidden"
@@ -265,7 +269,7 @@ function MilestoneItem({
             <m.div
               className={clsx(
                 'cursor-default',
-                'transition-transform duration-200 hover:scale-105'
+                'transition-transform duration-200 md:hover:scale-105'
               )}
               variants={itemRightVariants}
               initial="hidden"
