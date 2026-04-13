@@ -3,6 +3,7 @@ import { m, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 
 import { DocumentIcon } from '@/components/Icons';
+import { usePassword } from '@/providers/PasswordProvider';
 
 import useTranslation from '@/hooks/useTranslation';
 
@@ -35,19 +36,28 @@ function ButtonContactMe() {
   );
 }
 
+const RESUME_URL =
+  "https://www.figma.com/proto/IfU0FsSbMMZS2Rh9thBHg8/acha's-resume?t=KodWEAc0OKGo95ml-1";
+
 function ButtonResume() {
   const { t } = useTranslation('home');
+  const { requestAccess } = usePassword();
+
+  const handleClick = () => {
+    requestAccess(() => {
+      window.open(RESUME_URL, '_blank', 'noreferrer,nofollow');
+    });
+  };
 
   return (
-    <a
-      target="_blank"
-      rel="noreferrer nofollow"
-      href="https://www.figma.com/proto/IfU0FsSbMMZS2Rh9thBHg8/acha's-resume?t=KodWEAc0OKGo95ml-1"
+    <button
+      type="button"
+      onClick={handleClick}
       className={clsx('button button--ghost px-2', 'md:button--big md:px-2')}
     >
       <DocumentIcon className={clsx('h-5 w-5')} />
       {t('header.resumeButton')}
-    </a>
+    </button>
   );
 }
 

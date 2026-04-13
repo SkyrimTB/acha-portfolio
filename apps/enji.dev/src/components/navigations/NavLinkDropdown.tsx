@@ -32,6 +32,7 @@ LinkRef.displayName = 'LinkRef';
 type NavLink = {
   href: string;
   title: string;
+  onClick?: (e: React.MouseEvent) => void;
 };
 
 interface NavLinkDropdownProps {
@@ -65,16 +66,28 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
               >
                 {items.map((item) => (
                   <Menu.Item key={item.href}>
-                    {({ active }) => (
-                      <LinkRef
-                        href={item.href}
-                        className={clsx('nav-link h-8 text-xs', [
-                          active && 'nav-link--focus',
-                        ])}
-                      >
-                        {item.title}
-                      </LinkRef>
-                    )}
+                    {({ active }) =>
+                      item.onClick ? (
+                        <button
+                          type="button"
+                          onClick={item.onClick}
+                          className={clsx('nav-link h-8 w-full text-xs', [
+                            active && 'nav-link--focus',
+                          ])}
+                        >
+                          {item.title}
+                        </button>
+                      ) : (
+                        <LinkRef
+                          href={item.href}
+                          className={clsx('nav-link h-8 text-xs', [
+                            active && 'nav-link--focus',
+                          ])}
+                        >
+                          {item.title}
+                        </LinkRef>
+                      )
+                    }
                   </Menu.Item>
                 ))}
               </Menu.Items>

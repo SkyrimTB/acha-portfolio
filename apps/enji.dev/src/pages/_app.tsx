@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 
+import PasswordGate from '@/components/PasswordGate';
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
@@ -18,6 +19,8 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+const PROTECTED_ROUTES = ['/work/experience'];
+
 function getDefaultLayout(page: ReactElement): ReactNode {
   return <WithNavigationFooter>{page}</WithNavigationFooter>;
 }
@@ -33,11 +36,20 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
     getLayout = getDefaultLayout;
   }
 
+  const isProtected = PROTECTED_ROUTES.includes(router.pathname);
+
   return (
     <Provider>
       <RootLayout>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        {getLayout(<Component {...pageProps} />)}
+        {isProtected ? (
+          <PasswordGate>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            {getLayout(<Component {...pageProps} />)}
+          </PasswordGate>
+        ) : (
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          getLayout(<Component {...pageProps} />)
+        )}
         <GoogleAnalytics gaId="G-FB9QLDNKNN" />
       </RootLayout>
     </Provider>

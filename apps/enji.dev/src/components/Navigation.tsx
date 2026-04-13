@@ -1,4 +1,6 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 
 import { GitHubIcon, TwitterIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
@@ -11,13 +13,26 @@ import NavLogo from '@/components/navigations/NavLogo';
 
 import useOnScroll from '@/hooks/useOnScroll';
 import useTranslation from '@/hooks/useTranslation';
+import { usePassword } from '@/providers/PasswordProvider';
 
 function Navbar() {
+  const router = useRouter();
   const isScrolled = useOnScroll(0);
   const { t } = useTranslation('common');
+  const { requestAccess } = usePassword();
+
+  const handleExperienceClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      requestAccess(() => {
+        router.push('/work/experience');
+      });
+    },
+    [requestAccess, router]
+  );
 
   const workLinks = [
-    { title: t('nav.experience'), href: '/work/experience' },
+    { title: t('nav.experience'), href: '/work/experience', onClick: handleExperienceClick },
     { title: t('nav.contact'), href: '/work/contact' },
   ];
 

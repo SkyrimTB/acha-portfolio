@@ -6,9 +6,13 @@ import NavLink from '@/components/navigations/NavLink';
 
 import type { NavLinkProps } from '@/components/navigations/NavLink';
 
+type NavLinkExpandedItem = NavLinkProps & {
+  onClick?: (e: React.MouseEvent) => void;
+};
+
 interface NavLinkExpandedProps {
   title: string;
-  items: Array<NavLinkProps>;
+  items: Array<NavLinkExpandedItem>;
 }
 
 function NavLinkExpanded({ title, items }: NavLinkExpandedProps) {
@@ -26,7 +30,17 @@ function NavLinkExpanded({ title, items }: NavLinkExpandedProps) {
         {items.map((item, idx) => (
           <React.Fragment key={item.href}>
             <li>
-              <NavLink title={item.title} href={item.href} />
+              {item.onClick ? (
+                <button
+                  type="button"
+                  onClick={item.onClick}
+                  className={clsx('nav-link')}
+                >
+                  {item.title}
+                </button>
+              ) : (
+                <NavLink title={item.title} href={item.href} />
+              )}
             </li>
             {idx !== items.length - 1 && (
               <li>
